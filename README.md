@@ -9,3 +9,4 @@ This repo contains:
 - AI scaffolding that enables hinters to use generic coding assistants for hinter operations
 
 See [instructions](./instructions.md) for usage.
+Inspect the [`1425-ad`](https://github.com/bbenligiray/hinter-core/tree/1425-ad) branch for example usage.

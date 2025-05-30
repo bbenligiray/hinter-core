@@ -13,22 +13,28 @@ Processes incoming reports from peers (located in `peers/{ALIAS}-{PUBLIC_KEY}/in
         *   If not provided, reports from all peers are considered.
 
 ## Core Logic / Procedure
-1.  **Data Retrieval (User Entries for Context & Processed Status Check)**:
-    *   Execute `ai/tools/read-entries.sh` to get all existing user entries. This provides context for understanding incoming report information AND allows checking for already ingested reports (those with `_from_[alias]` in filename and correct `SOURCE_REPORT` metadata).
-    *   Ingest the COMPLETE output.
-2.  **Identify Target Reports**:
-    *   Scan all `peers/*/incoming/` directories. If `{SOURCE_PEER_ALIAS}` is specified, only scan that peer's incoming directory.
-    *   Identify report files (Markdown, `YYYYMMDDHHMMSS.md` format). Let each be `{INCOMING_REPORT_PATH}`.
-    *   **Processing Status Determination**:
-        *   For each `{INCOMING_REPORT_PATH}`:
-            *   Check among the ingested entries (from step 1) if an entry already exists in `entries/` that has a `<!-- SOURCE_REPORT: {INCOMING_REPORT_PATH} -->` metadata tag.
-            *   If such an entry exists, this `{INCOMING_REPORT_PATH}` is considered "processed". Otherwise, it's "unprocessed".
+1.  **Data Retrieval**:
+    *   **User Entries (for Context & Processed Status Check)**:
+        *   Execute `ai/tools/read-entries.sh` to get all existing user entries. This provides context for understanding incoming report information AND allows checking for already ingested reports (those with `_from_[alias]` in filename and correct `SOURCE_REPORT` metadata).
+        *   Ingest the COMPLETE output.
+    *   **Incoming Reports Content**:
+        *   Execute `ai/tools/read-incoming-reports.sh` to get the content of all incoming reports from all peers, along with their metadata (Peer-Alias, Peer-Public-Key, Report-Filename).
+        *   Ingest the COMPLETE output. This script handles iterating through peer directories.
+2.  **Identify Target Reports & Determine Processing Status**:
+    *   The output from `ai/tools/read-incoming-reports.sh` provides a list of all available incoming reports and their content.
+    *   If `{SOURCE_PEER_ALIAS}` is specified by the user, filter this list to only include reports where `Peer-Alias` matches `{SOURCE_PEER_ALIAS}`.
+    *   For each report obtained from the script:
+        *   Let `{INCOMING_REPORT_PATH}` be constructed as `data/peers/{Peer-Alias}-{Peer-Public-Key}/incoming/{Report-Filename}` using the metadata from the script.
+        *   Check among the ingested user entries (from `read-entries.sh` output) if an entry already exists in `entries/` that has a `<!-- SOURCE_REPORT: {INCOMING_REPORT_PATH} -->` metadata tag.
+        *   If such an entry exists, this report is considered "processed". Otherwise, it's "unprocessed".
     *   Filter the list to include only "unprocessed" reports.
     *   If no unprocessed reports are found for the given scope, provide "No New Reports" output.
 3.  **Process Each Unprocessed Report**:
-    *   For each unprocessed `{INCOMING_REPORT_PATH}`:
-        *   Read its full content.
-        *   **Content Analysis**: Analyze the report content to extract key information, entities, opportunities, events, or insights.
+    *   For each unprocessed report (identified in step 2, with its content already available from `read-incoming-reports.sh` output):
+        *   Let `{PEER_ALIAS}` be the `Peer-Alias` from the script's metadata for this report.
+        *   Let `{REPORT_FILENAME}` be the `Report-Filename` from the script's metadata.
+        *   Let `{INCOMING_REPORT_PATH}` be `data/peers/{PEER_ALIAS}-{Peer-Public-Key}/incoming/{REPORT_FILENAME}`.
+        *   **Content Analysis**: Analyze the pre-fetched report content to extract key information, entities, opportunities, events, or insights.
         *   **Contextualization**: Cross-reference information with existing user entries (from step 1) to understand its relevance, potential connections, or contradictions.
         *   **Apply Learned Preferences**: Use insights from previous user feedback on ingested entries (see "AI Learning"). Filter or prioritize information based on these learned patterns.
         *   **Create New Entry in `entries/`**:
@@ -91,4 +97,5 @@ Processes incoming reports from peers (located in `peers/{ALIAS}-{PUBLIC_KEY}/in
 
 ## Dependencies
 *   Relies on `ai/tools/read-entries.sh` for context from existing user entries and for checking the processed status of incoming reports.
+*   Relies on `ai/tools/read-incoming-reports.sh` for accessing the content and metadata of all incoming reports.
 *   Needs AI capabilities for information extraction, summarization, relevance assessment, and learning from feedback.

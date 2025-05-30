@@ -40,6 +40,8 @@ Users will typically:
 *   Use your analytical capabilities to draft insightful entries (e.g., summaries, pattern detection) or find specific information.
 
 ## 3. AI-Assisted Operations (Command Reference)
+**IMPORTANT: Before attempting to execute any command, you MUST first read the corresponding detailed prompt file in `ai/prompts/` for the specific step-by-step procedure, exact metadata formats, error handling, and output messages.** This README provides a high-level overview only.
+
 This section lists available operations. For detailed execution steps, error handling, and exact output formats for each, consult the corresponding file in the `ai/prompts/` directory.
 
 *   **Command**: `add-peer` (see `ai/prompts/add-peer.md`)
@@ -119,9 +121,14 @@ This section lists available operations. For detailed execution steps, error han
     *   **Usage**: Execute this script whenever you need to access entry content for any task, including finding entries, drafting new entries, drafting reports, ingesting reports, or answering questions about existing entries.
     *   **Important**: Always ingest the COMPLETE output of this script into your context when analysis is needed. Do not use command-line tools like `grep` to pre-filter its output, as your full context allows for better understanding and pattern recognition. Only read individual entry files in exceptional cases where the script output is insufficient.
 
+*   **`ai/tools/read-incoming-reports.sh`**:
+    *   **Purpose**: This script is your **primary and preferred method** for accessing the content of all incoming reports from all peers. It concatenates report content with metadata (Peer-Alias, Peer-Public-Key, Report-Filename).
+    *   **Usage**: Execute this script when you need to analyze incoming reports, for example, during the `ingest-reports` operation or when the user asks questions about received reports.
+    *   **Important**: Always ingest the COMPLETE output of this script into your context when analysis of incoming reports is needed. This provides a comprehensive view of all received information.
+
 ## 5. Guidelines for the AI Assistant
 
-*   **Prefer read-entries.sh**: Always use `ai/tools/read-entries.sh` to access entry content rather than reading individual entry files. This script provides comprehensive access to all entries and is optimized for AI analysis. Only read individual entry files in exceptional cases where the script output is insufficient.
+*   **Prefer Scripted Data Access**: Always use `ai/tools/read-entries.sh` to access entry content and `ai/tools/read-incoming-reports.sh` to access incoming reports, rather than reading individual files directly. These scripts provide comprehensive and structured access to the data and are optimized for AI analysis. Only read individual files in exceptional cases where script output is insufficient.
 *   **Natural Language Understanding**: Strive to understand the user's intent even if their phrasing doesn't exactly match the "User Might Say" examples.
 *   **Clarification**: If a user's request is ambiguous or missing necessary information for a command, ask clarifying questions before proceeding. (e.g., "To add a peer, I need their alias and public key. What are they?").
 *   **Confirmation for Destructive Actions**: Always seek explicit user confirmation (e.g., "yes/no") before executing operations that delete data (e.g., `delete-entry`, `remove-peer`) or send information externally (e.g., `post-reports`). Show a summary of what will be affected.
@@ -129,7 +136,7 @@ This section lists available operations. For detailed execution steps, error han
     *   Not all user requests will map directly to a single command. You should be prepared to break down more complex requests into a sequence of available operations.
     *   For example, if the user asks to "delete all notes about Project Alpha," you should first use the logic from `find-entry` to locate relevant notes, present them to the user for confirmation (with summaries), and then use the `delete-entry` logic for each confirmed note.
     *   Always explain your proposed plan to the user before executing a multi-step operation, especially if it involves deletions or significant changes. For instance: "Okay, to delete entries related to 'Project Alpha', I will first search for all entries mentioning it. Then, I will show you the list with summaries, and you can tell me which ones to delete. Does that sound good?"
-*   **Using This README vs. Prompt Files**: Use this `ai/README.md` for a high-level understanding of commands, their purpose, and how users might ask for them. When you've identified the correct command to execute, refer to the specific `ai/prompts/{command-name}.md` file for the detailed step-by-step procedure, exact metadata formats, error handling, and output messages.
+*   **Using This README vs. Prompt Files**: Use this `ai/README.md` for a high-level understanding of commands, their purpose, and how users might ask for them. **Crucially, once you've identified a command the user might be requesting, you MUST read the specific `ai/prompts/{command-name}.md` file. This file contains the definitive instructions for execution, including detailed step-by-step procedures, exact metadata formats, error handling, and output messages. Do not attempt to perform the command based solely on the information in this README.**
 *   **Error Reporting**: If an operation fails, clearly state the error based on the "Error Handling & Responses" section of the relevant prompt file.
 *   **Learning from User Feedback**: For commands like `draft-entries`, `ingest-reports`, and `revise-reports`, the corresponding prompt files detail how to incorporate user feedback (often from "User Feedback & Notes" sections in entries). Actively look for these opportunities to adapt and improve the relevance and quality of your assistance.
 *   **Responding to "Help" Requests**: If the user asks for help (e.g., "What can you do?", "hinter --help"), use Section 3 of this README to summarize available operations and provide examples of how to invoke them. You can list the command names and their brief user-facing descriptions.
