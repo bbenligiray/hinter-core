@@ -1,10 +1,10 @@
 <!-- DRAFT REPORT FOR: friarbenedictus -->
 <!-- ITEM FOCUS: Sickness in Easthaven & request for herbs -->
-<!-- TARGET PEER DIR: friarbenedictus-f6789012345678901234567890123456789012345678901234567890123456 -->
+<!-- TARGET PEER DIR: friarbenedictus-f678901234567890123456789012345678901234567890123456789012345644 -->
 <!-- SOURCE ENTRIES: 14250304140000_merchant_thomas_visit.md, 14250305100000_friar_benedictus_herbs.md, 14250310092000_ai_sickness_report.md -->
 <!-- CREATED: 14250311102000 -->
 <!-- STATUS: posted -->
-<!-- POSTED_AS: data/peers/friarbenedictus-f6789012345678901234567890123456789012345678901234567890123456/outgoing/14250311102500.md -->
+<!-- POSTED_AS: data/peers/friarbenedictus-f678901234567890123456789012345678901234567890123456789012345644/outgoing/14250311102500.md -->
 
 # Report for Friar Benedictus - Regarding: Easthaven Sickness & Herbs
 

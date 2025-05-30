@@ -1,10 +1,10 @@
 <!-- DRAFT REPORT FOR: lordrobert -->
 <!-- ITEM FOCUS: Baron William's recent activities and potential implications -->
-<!-- TARGET PEER DIR: lordrobert-a1b2c3d4e5f6789012345678901234567890123456789012345678901234567890 -->
+<!-- TARGET PEER DIR: lordrobert-a1b2c3d4e5f67890123456789012345678901234567890123456789012345678 -->
 <!-- SOURCE ENTRIES: 14250305100000_friar_benedictus_herbs.md, 14250309100000_baron_william_messenger.md, 14250310090500_ai_security_insight.md -->
 <!-- CREATED: 14250311100000 -->
 <!-- STATUS: posted -->
-<!-- POSTED_AS: data/peers/lordrobert-a1b2c3d4e5f6789012345678901234567890123456789012345678901234567890/outgoing/14250311150000.md -->
+<!-- POSTED_AS: data/peers/lordrobert-a1b2c3d4e5f67890123456789012345678901234567890123456789012345678/outgoing/14250311150000.md -->
 
 # Report for Lord Robert - Regarding: Baron William's Activities
 

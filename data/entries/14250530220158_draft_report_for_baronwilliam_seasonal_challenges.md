@@ -1,10 +1,10 @@
 <!-- DRAFT REPORT FOR: baronwilliam -->
 <!-- ITEM FOCUS: Seasonal Challenges and Border Stability -->
-<!-- TARGET PEER DIR: baronwilliam-e5f67890123456789012345678901234567890123456789012345678901234 -->
+<!-- TARGET PEER DIR: baronwilliam-e5f6789012345678901234567890123456789012345678901234567890123412 -->
 <!-- SOURCE ENTRIES: 14250315080000_patrol_report_whisperingwoods.md, 14250313180000_easthaven_sickness_escalation.md, 14250309100000_baron_william_messenger.md -->
 <!-- CREATED: 14250530220158 -->
 <!-- STATUS: posted -->
-<!-- POSTED_AS: data/peers/baronwilliam-e5f67890123456789012345678901234567890123456789012345678901234/outgoing/14250530220158.md -->
+<!-- POSTED_AS: data/peers/baronwilliam-e5f6789012345678901234567890123456789012345678901234567890123412/outgoing/14250530220158.md -->
 
 # Report for Baron William - Regarding: Seasonal Challenges and Border Stability
 

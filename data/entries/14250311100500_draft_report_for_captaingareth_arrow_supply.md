@@ -1,10 +1,10 @@
 <!-- DRAFT REPORT FOR: captaingareth -->
 <!-- ITEM FOCUS: Arrow supply status and action for Oakhaven fletcher -->
-<!-- TARGET PEER DIR: captaingareth-b2c3d4e5f67890123456789012345678901234567890123456789012345678901 -->
+<!-- TARGET PEER DIR: captaingareth-b2c3d4e5f6789012345678901234567890123456789012345678901234567890 -->
 <!-- SOURCE ENTRIES: 14250303090000_captain_gareth_meeting.md, 14250307110000_blacksmith_fletcher_dispute.md, 14250310091000_ai_resource_action.md -->
 <!-- CREATED: 14250311100500 -->
 <!-- STATUS: posted -->
-<!-- POSTED_AS: data/peers/captaingareth-b2c3d4e5f67890123456789012345678901234567890123456789012345678901/outgoing/14250314100000.md -->
+<!-- POSTED_AS: data/peers/captaingareth-b2c3d4e5f6789012345678901234567890123456789012345678901234567890/outgoing/14250314100000.md -->
 
 # Report for Captain Gareth - Regarding: Arrow Supplies
 

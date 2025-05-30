@@ -1,10 +1,10 @@
 <!-- DRAFT REPORT FOR: lordrobert -->
 <!-- ITEM FOCUS: Easthaven recovery & Stonebridge drawdown status -->
-<!-- TARGET PEER DIR: lordrobert-a1b2c3d4e5f6789012345678901234567890123456789012345678901234567890 -->
+<!-- TARGET PEER DIR: lordrobert-a1b2c3d4e5f67890123456789012345678901234567890123456789012345678 -->
 <!-- SOURCE ENTRIES: 14250420090000_easthaven_quarantine_lifted.md, 14250423140000_easthaven_reeve_report.md, 14250426100000_easthaven_aid_plan.md, 14250422100000_stonebridge_drawdown.md -->
 <!-- CREATED: 14250428100000 -->
 <!-- STATUS: posted -->
-<!-- POSTED_AS: data/peers/lordrobert-a1b2c3d4e5f6789012345678901234567890123456789012345678901234567890/outgoing/14250428100500.md -->
+<!-- POSTED_AS: data/peers/lordrobert-a1b2c3d4e5f67890123456789012345678901234567890123456789012345678/outgoing/14250428100500.md -->
 
 # Report for Lord Robert - Regarding: Easthaven & Stonebridge Update
 
