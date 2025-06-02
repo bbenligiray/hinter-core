@@ -39,7 +39,7 @@ One way to do this is:
 
 7. Create a `.env` file that contains your [keypair](#keypair) using:
     ```sh
-    docker run -it --rm -v "$(pwd)":/app bbenligiray/hinter-core npm run generate-keys
+    docker run -it --rm -v /app/node_modules -v "$(pwd)":/app bbenligiray/hinter-core npm run generate-keys
     ```
 
 8. Start `hinter-core` using:
