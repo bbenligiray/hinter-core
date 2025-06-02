@@ -32,8 +32,8 @@ One way to do this is:
     - Agree to open the cloned repository
     - Click View → Terminal
     
-    > [!TIP]
-    > All Docker commands are designed to be run inside this repository.
+> [!TIP]
+> All Docker commands are designed to be run inside this repository.
 
 6. (OPTIONAL) The technically inclined may choose to build the Docker image locally.
 
@@ -95,7 +95,7 @@ docker rm my-hinter-core
 ```
 
 > [!TIP]
-> You are recommended to stop your `hinter-core` before updating `data/` contents (manually or through an [AI assistant](#ai-assistant-operation)), and start it again once you are done.
+> You are recommended to stop and remove your `hinter-core` container before updating `data/` contents (manually or through an [AI assistant](#ai-assistant-operation)), and start a new one once you are done.
 > This is both a best practice that prevents you from sending unfinalized reports, and is a requirement for peer updates to take effect.
 
 ## AI Assistant Operation
