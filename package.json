@@ -15,7 +15,7 @@
   },
   "scripts": {
     "docker:build": "docker build -t bbenligiray/hinter-core .",
-    "docker:generate-keys": "docker run -it --rm -v .:/app bbenligiray/hinter-core npm run generate-keys",
+    "docker:generate-keys": "docker run -it --rm -v /app/node_modules -v .:/app bbenligiray/hinter-core npm run generate-keys",
     "docker:start": "docker run -it --rm -v ./data/peers:/app/data/peers -v ./.env:/app/.env bbenligiray/hinter-core",
     "generate-keys": "pear run src/generate-keys.js",
     "start": "pear run src/index.js"
