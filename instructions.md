@@ -44,7 +44,7 @@ One way to do this is:
 
 8. Start `hinter-core` using:
     ```sh
-    docker run -it --rm -v "$(pwd)/data/peers":/app/data/peers -v "$(pwd)/.env":/app/.env bbenligiray/hinter-core
+    docker run -it --rm --network host -v "$(pwd)/data/peers":/app/data/peers -v "$(pwd)/.env":/app/.env bbenligiray/hinter-core
     ```
 
 > [!TIP]
@@ -78,7 +78,7 @@ This is easy to achieve if both of you are running `hinter-core` at all times, o
 
 Run `hinter-core` in the background in "always restart" mode using:
 ```sh
-docker run -d --name my-hinter-core --restart=always -v "$(pwd)/data/peers":/app/data/peers -v "$(pwd)/.env":/app/.env bbenligiray/hinter-core
+docker run -d --name my-hinter-core --restart=always --network host -v "$(pwd)/data/peers":/app/data/peers -v "$(pwd)/.env":/app/.env bbenligiray/hinter-core
 ```
 
 Note that you will not see its logs when the container is running in the background.
